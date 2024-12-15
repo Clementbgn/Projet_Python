@@ -1,7 +1,7 @@
 # pyproject.toml
 
 [tool.poetry]
-name = "Rocket_simple_Traj"
+name = "Rocket_simple_Trajectory_Project"
 version = "0.1.0"
 description = "Un projet Python de démonstration"
 authors = ["Clément Bouguyon <clement.bouguyon@estaca.eu>"]

@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../s
 
 
 import pytest
-from src.Trajectory.main import compute_forces, simulate_trajectory
+from src.Rocket_simple_Trajectory_Project.main import compute_forces, simulate_trajectory
 
 
 def test_compute_forces():
