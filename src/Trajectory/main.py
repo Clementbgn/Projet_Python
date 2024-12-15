@@ -16,3 +16,22 @@ initial_velocity = 300.0  # Vitesse initiale (m/s)
 launch_angle = 45.0  # Angle de lancement (en degrés)
 time_step = 0.01  # Pas de temps (s)
 max_time = 60  # Durée maximale de la simulation (s)
+
+def compute_forces(vx, vy):
+    """ Calcule les forces aérodynamiques : traînée et portance """
+    velocity = np.sqrt(vx**2 + vy**2)
+    if velocity == 0:
+        return 0, 0  # Pas de mouvement => pas de force
+
+    # Direction de la vitesse
+    drag_force = 0.5 * CD * RHO * AREA * velocity**2
+    lift_force = 0.5 * CL * RHO * AREA * velocity**2
+
+    # Composantes directionnelles (traînée opposée à la vitesse, portance perpendiculaire)
+    drag_x = -drag_force * (vx / velocity)
+    drag_y = -drag_force * (vy / velocity)
+
+    lift_x = -lift_force * (vy / velocity)
+    lift_y = lift_force * (vx / velocity)
+
+    return (drag_x + lift_x, drag_y + lift_y)
