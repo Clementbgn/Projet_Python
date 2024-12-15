@@ -17,8 +17,9 @@ launch_angle = 45.0  # Angle de lancement (en degrés)
 time_step = 0.01  # Pas de temps (s)
 max_time = 60  # Durée maximale de la simulation (s)
 
+
 def compute_forces(vx, vy):
-    """ Calcule les forces aérodynamiques : traînée et portance """
+    """Calcule les forces aérodynamiques : traînée et portance"""
     velocity = np.sqrt(vx**2 + vy**2)
     if velocity == 0:
         return 0, 0  # Pas de mouvement => pas de force
@@ -36,8 +37,9 @@ def compute_forces(vx, vy):
 
     return (drag_x + lift_x, drag_y + lift_y)
 
+
 def simulate_trajectory():
-    """ Simule la trajectoire de la fusée """
+    """Simule la trajectoire de la fusée"""
     # Conditions initiales
     angle_rad = np.radians(launch_angle)
     vx = initial_velocity * np.cos(angle_rad)
@@ -77,8 +79,9 @@ def simulate_trajectory():
 
     return positions_x, positions_y, times
 
+
 def plot_trajectory(x, y):
-    """ Affiche la trajectoire avec matplotlib """
+    """Affiche la trajectoire avec matplotlib"""
     plt.figure(figsize=(10, 6))
     plt.plot(x, y, label="Trajectoire balistique avec traînée et portance")
     plt.title("Trajectoire balistique d'une fusée")
@@ -88,9 +91,10 @@ def plot_trajectory(x, y):
     plt.legend()
     plt.show()
 
+
 if __name__ == "__main__":
     # Simulation
     x_positions, y_positions, time = simulate_trajectory()
-    
+
     # Affichage
     plot_trajectory(x_positions, y_positions)

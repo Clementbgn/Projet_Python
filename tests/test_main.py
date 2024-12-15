@@ -1,6 +1,7 @@
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
 
 
 import pytest
@@ -8,14 +9,19 @@ from src.Trajectory.main import compute_forces, simulate_trajectory
 
 
 def test_compute_forces():
-    """ Teste le calcul des forces aérodynamiques. """
+    """Teste le calcul des forces aérodynamiques."""
     # Test avec vitesse nulle (pas de forces)
     fx, fy = compute_forces(0, 0)
-    assert fx == 0, "La force de traînée et portance devrait être nulle si la vitesse est nulle."
-    assert fy == 0, "La force de traînée et portance devrait être nulle si la vitesse est nulle."
+    assert (
+        fx == 0
+    ), "La force de traînée et portance devrait être nulle si la vitesse est nulle."
+    assert (
+        fy == 0
+    ), "La force de traînée et portance devrait être nulle si la vitesse est nulle."
+
 
 def test_simulate_trajectory():
-    """ Teste la simulation de trajectoire. """
+    """Teste la simulation de trajectoire."""
     # Récupération des résultats de la simulation
     x_positions, y_positions, times = simulate_trajectory()
 
@@ -34,6 +40,7 @@ def test_simulate_trajectory():
     # Vérifie que le temps augmente correctement
     assert times[0] == 0, "Le temps initial doit être 0."
     assert times[-1] > times[0], "Le temps final doit être supérieur au temps initial."
+
 
 if __name__ == "__main__":
     pytest.main()
