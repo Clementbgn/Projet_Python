@@ -1,10 +1,10 @@
 # pyproject.toml
 
 [tool.poetry]
-name = "mon_projet"
+name = "Rocket_simple_Traj"
 version = "0.1.0"
 description = "Un projet Python de démonstration"
-authors = ["Ton Nom <ton.email@example.com>"]
+authors = ["Clément Bouguyon <clement.bouguyon@estaca.eu>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
