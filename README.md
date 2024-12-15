@@ -4,6 +4,14 @@
 # Coverage obtenu sur Coverage.io
 ![alt text](doc/Coverage.png)
 
+# Installation
+
+To install the project you can use :
+
+'''
+pip install Rocket-simple-Trajectory-Project
+'''
+
 # Simulation de Trajectoire Balistique
 
 Ce projet implémente une simulation de trajectoire balistique pour un objet (comme une fusée ou un missile), en tenant compte des forces aérodynamiques (trainée et portance). La simulation est effectuée sans correction de la direction (comme le TVC, ou "Thrust Vector Control").
