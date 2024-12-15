@@ -6,9 +6,9 @@
 
 # Installation
 
-To install the project you can use :
+To install the project you can use :  
 
-'pip install Rocket-simple-Trajectory-Project'
+`pip install Rocket-simple-Trajectory-Project`.
 
 # Simulation de Trajectoire Balistique
 
