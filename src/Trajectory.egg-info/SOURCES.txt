@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/Trajectory/__init__.py
+src/Trajectory/main.py
+src/Trajectory.egg-info/PKG-INFO
+src/Trajectory.egg-info/SOURCES.txt
+src/Trajectory.egg-info/dependency_links.txt
+src/Trajectory.egg-info/top_level.txt
+tests/test_main.py
