@@ -87,3 +87,10 @@ def plot_trajectory(x, y):
     plt.grid()
     plt.legend()
     plt.show()
+
+if __name__ == "__main__":
+    # Simulation
+    x_positions, y_positions, time = simulate_trajectory()
+    
+    # Affichage
+    plot_trajectory(x_positions, y_positions)
