@@ -35,3 +35,44 @@ def compute_forces(vx, vy):
     lift_y = lift_force * (vx / velocity)
 
     return (drag_x + lift_x, drag_y + lift_y)
+
+def simulate_trajectory():
+    """ Simule la trajectoire de la fusée """
+    # Conditions initiales
+    angle_rad = np.radians(launch_angle)
+    vx = initial_velocity * np.cos(angle_rad)
+    vy = initial_velocity * np.sin(angle_rad)
+
+    x, y = 0, 0  # Position initiale
+    t = 0  # Temps
+
+    positions_x = [x]
+    positions_y = [y]
+    times = [t]
+
+    # Boucle d'intégration (Euler)
+    while y >= 0 and t < max_time:
+        # Forces aérodynamiques
+        force_x, force_y = compute_forces(vx, vy)
+
+        # Accélérations (a = F/m)
+        ax = force_x / MASS
+        ay = force_y / MASS - G
+
+        # Mise à jour des vitesses
+        vx += ax * time_step
+        vy += ay * time_step
+
+        # Mise à jour des positions
+        x += vx * time_step
+        y += vy * time_step
+
+        # Mise à jour du temps
+        t += time_step
+
+        # Sauvegarde des positions et temps
+        positions_x.append(x)
+        positions_y.append(y)
+        times.append(t)
+
+    return positions_x, positions_y, times
