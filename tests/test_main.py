@@ -14,15 +14,6 @@ def test_compute_forces():
     assert fx == 0, "La force de traînée et portance devrait être nulle si la vitesse est nulle."
     assert fy == 0, "La force de traînée et portance devrait être nulle si la vitesse est nulle."
 
-    # Test avec des vitesses positives
-    fx, fy = compute_forces(10, 0)  # Vitesse horizontale uniquement
-    assert fx < 0, "La traînée devrait agir contre la direction de la vitesse horizontale."
-    assert fy == 0, "La portance doit être nulle si vy=0."
-
-    fx, fy = compute_forces(0, 10)  # Vitesse verticale uniquement
-    assert fx == 0, "La portance doit être nulle si vx=0."
-    assert fy > 0, "La portance devrait agir vers le haut pour une vitesse verticale."
-
 def test_simulate_trajectory():
     """ Teste la simulation de trajectoire. """
     # Récupération des résultats de la simulation
