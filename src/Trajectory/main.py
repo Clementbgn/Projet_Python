@@ -76,3 +76,14 @@ def simulate_trajectory():
         times.append(t)
 
     return positions_x, positions_y, times
+
+def plot_trajectory(x, y):
+    """ Affiche la trajectoire avec matplotlib """
+    plt.figure(figsize=(10, 6))
+    plt.plot(x, y, label="Trajectoire balistique avec traînée et portance")
+    plt.title("Trajectoire balistique d'une fusée")
+    plt.xlabel("Distance horizontale (m)")
+    plt.ylabel("Altitude (m)")
+    plt.grid()
+    plt.legend()
+    plt.show()
